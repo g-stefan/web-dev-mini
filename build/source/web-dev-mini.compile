@@ -1,0 +1,5 @@
+--exe web-dev-mini
+--source-path=source/web-dev-mini.exe
+--use-project=xyo-win.static
+--output-bin-path=output
+

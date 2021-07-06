@@ -1,0 +1,7 @@
+{
+	"application.name": "Web-Dev-Mini",
+	"apache-http-server.http.address": "127.0.0.1",
+	"apache-http-server.http.port": 80,
+	"admin.email": "admin@localhost",
+	"developer": true
+}
