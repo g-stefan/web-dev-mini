@@ -40,13 +40,17 @@ Shell.chdir("apache-http-server");
 Shell.removeDirRecursively("include");
 Shell.removeDirRecursively("lib");
 Shell.chdir("..");
-
 //
 Shell.mkdir("php");
 Shell.chdir("php");
 Shell.system("7z x -aoa ../../../vendor/php-8.0.8-Win32-vs16-x64.zip");
 Shell.copy("../../../vendor/composer.phar","composer.phar");
 Shell.chdir("..");
+Shell.mkdir("../../temp");
+Shell.chdir("../../temp");
+Shell.system("7z x -aoa ../vendor/php_mailparse-3.1.1-8.0-ts-vs16-x64.zip");
+Shell.copy("php_mailparse.dll","../output/library/php/ext/php_mailparse.dll");
+Shell.chdir("../output/library");
 //
 Shell.copy("../../vendor/vc-2019-redist.x64.exe","vc-2019-redist.x64.exe");
 //
