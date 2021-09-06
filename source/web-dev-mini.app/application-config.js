@@ -20,7 +20,8 @@ this_.config= {
 	"apache-http-server.http.address": "127.0.0.1",
 	"apache-http-server.http.port": 80,
 	"admin.email": "admin@localhost",
-	"developer": false
+	"developer": false,
+	"open.default": "application"
 };
 
 var configData=null;

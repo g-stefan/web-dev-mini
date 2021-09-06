@@ -19,6 +19,7 @@ app.setPath("userData",path.join(cwd,"repository/"+app.getName()));
 this_.mainWindow=null;
 
 this_.secondInstance=!app.requestSingleInstanceLock();
+this_.secondInstanceShow=true;
 
 if(this_.secondInstance) {
 	app.quit();
@@ -26,12 +27,14 @@ if(this_.secondInstance) {
 };
 
 app.on("second-instance", function(event, commandLine, workingDirectory){
-	if (this_.mainWindow) {
-		if (this_.mainWindow.isMinimized()) {
-			this_.mainWindow.restore();
+	if(this_.secondInstanceShow) {
+		if (this_.mainWindow) {
+			if (this_.mainWindow.isMinimized()) {
+				this_.mainWindow.restore();
+			};
+			this_.mainWindow.focus();
+			return;
 		};
-		this_.mainWindow.focus();
-		return;
 	};
 });
 

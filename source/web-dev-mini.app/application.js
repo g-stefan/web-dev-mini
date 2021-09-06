@@ -5,6 +5,8 @@
 // MIT License (MIT) <http://opensource.org/licenses/MIT>
 //
 
+require("./application-init.js");
+
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"]=true;
 
 require("module").globalPaths.push(__dirname+"/../electron-modules");
@@ -12,6 +14,7 @@ require("module").globalPaths.push(__dirname+"/../electron-modules");
 var app=require("electron").app;
 var BrowserWindow=require("electron").BrowserWindow;
 var appLog=require("./application-log.js").log;
+var shell=require("electron").shell;
 
 process.on("uncaughtException",function(e) {
 	appLog(e.stack,"exception");
@@ -57,6 +60,10 @@ if(!fs.existsSync(cwd+"/tmp")) {
 var appMegaMenu=require("./application-megamenu.js");
 var appMenu=require("./application-menu.js");
 var appMenuData=require("./application-menu-data.js");
+//
+appMenuData.cmdOpenBrowser=function(){
+	shell.openExternal("http://"+config["apache-http-server.http.address"]+":"+config["apache-http-server.http.port"]);
+};
 //
 appMenuData.cmdShow=function(){
 	appMainWindow.mainWindow.show();
@@ -264,7 +271,14 @@ ipcMain.on("start-application", (event) => {
 	};
 	job.onDone=function(job) {
 		event.sender.send("set-procent",100);
+		if(config["open.default"]!="application") {
+			appMainWindow.mainWindow.hide();			
+		};
 		event.sender.send("connect-application","http://"+config["apache-http-server.http.address"]+":"+config["apache-http-server.http.port"]);
+		if(config["open.default"]=="browser") {
+			appMainWindow.secondInstanceShow=false;
+			appMenuData.cmdOpenBrowser();
+		};
 		appLog("Application start");
 	};
 	job.beginWork();

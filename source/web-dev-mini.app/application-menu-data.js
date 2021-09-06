@@ -19,11 +19,11 @@ function alert(msg){
 
 this_.cmdExit=null;
 this_.cmdShow=null;
+this_.cmdOpenBrowser=null;
 
 this_.loadMenu=function(menu){
-
 	menu.addItem("Open Web Dev Mini",this_.cmdShow);
+	menu.addItem("Open Browser",this_.cmdOpenBrowser);
 	menu.addSeparator();
 	menu.addItem("Quit Web Dev Mini",this_.cmdExit);
-
 };
