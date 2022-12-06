@@ -9,7 +9,7 @@
 
 #include "web-dev-mini-copyright.hpp"
 
-namespace WebDevMini{
+namespace WebDevMini {
 	namespace Copyright {
 
 		static const char *copyright_ = "Copyright (c) Grigore Stefan";
@@ -40,4 +40,3 @@ namespace WebDevMini{
 
 	};
 };
-

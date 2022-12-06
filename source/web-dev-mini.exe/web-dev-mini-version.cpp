@@ -12,10 +12,10 @@
 namespace WebDevMini {
 	namespace Version {
 
-		static const char *version_ = "1.5.0";
-		static const char *build_ = "9";
-		static const char *versionWithBuild_ = "1.5.0.9";
-		static const char *datetime_ = "2022-01-21 10:44:23";
+		static const char *version_ = "1.6.0";
+		static const char *build_ = "11";
+		static const char *versionWithBuild_ = "1.6.0.11";
+		static const char *datetime_ = "2022-02-01 17:35:53";
 
 		const char *version() {
 			return version_;
@@ -32,4 +32,3 @@ namespace WebDevMini {
 
 	};
 };
-

@@ -52,7 +52,7 @@ popd
 
 move "temp\node_modules" "temp\electron-v%PRODUCT_VERSION%-modules"
 pushd temp
-7zr a -mx9 -mmt4 -r- -sse -w. -y -t7z ..\vendor\%VENDOR% electron-v%PRODUCT_VERSION%-modules
+7z a -mx9 -mmt4 -r- -sse -w. -y -t7z ..\vendor\%VENDOR% electron-v%PRODUCT_VERSION%-modules
 popd
 
 :ElectronModulesDone

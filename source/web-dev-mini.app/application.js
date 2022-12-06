@@ -11,6 +11,13 @@ process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"]=true;
 
 require("module").globalPaths.push(__dirname+"/../electron-modules");
 
+const globalPaths = require("module").globalPaths;
+const Module = require("module");
+const nodeModulePaths = Module._nodeModulePaths;
+Module._nodeModulePaths = (from) => {
+	return nodeModulePaths(from).concat(globalPaths);
+};
+
 var app=require("electron").app;
 var BrowserWindow=require("electron").BrowserWindow;
 var appLog=require("./application-log.js").log;

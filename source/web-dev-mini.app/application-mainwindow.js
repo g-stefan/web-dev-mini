@@ -11,10 +11,16 @@ var appConfig=require("./application-config.js").config;
 var app=require("electron").app;
 var path=require("path");
 var cwd=process.cwd();
+var fs=require("fs");
+
+var userData=path.join(cwd,"repository/"+app.getName());
+if(!fs.existsSync(userData)) {
+	fs.mkdirSync(userData);
+};
 
 app.setName(appConfig["application.name"]);
 app.setPath("appData",path.join(cwd,"repository"));
-app.setPath("userData",path.join(cwd,"repository/"+app.getName()));
+app.setPath("userData",userData);
 
 this_.mainWindow=null;
 

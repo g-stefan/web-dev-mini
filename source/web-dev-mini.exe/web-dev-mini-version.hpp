@@ -10,10 +10,10 @@
 #ifndef WEB_DEV_VERSION_HPP
 #define WEB_DEV_VERSION_HPP
 
-#define WEB_DEV_VERSION_ABCD                1,5,0,9
-#define WEB_DEV_VERSION_STR                 "1.5.0"
-#define WEB_DEV_VERSION_STR_BUILD           "9"
-#define WEB_DEV_VERSION_STR_DATETIME        "2022-01-21 10:44:23"
+#define WEB_DEV_VERSION_ABCD 1, 6, 0, 11
+#define WEB_DEV_VERSION_STR "1.6.0"
+#define WEB_DEV_VERSION_STR_BUILD "11"
+#define WEB_DEV_VERSION_STR_DATETIME "2022-02-01 17:35:53"
 
 #ifndef XYO_RC
 
@@ -28,4 +28,3 @@ namespace WebDevMini {
 
 #endif
 #endif
-

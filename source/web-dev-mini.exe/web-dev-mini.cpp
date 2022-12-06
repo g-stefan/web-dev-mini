@@ -17,17 +17,17 @@ namespace Main {
 
 	using namespace XYO;
 
-	class Application :
-		public virtual IMain {
+	class Application : public virtual IMain {
 			XYO_DISALLOW_COPY_ASSIGN_MOVE(Application);
-		protected:
 
+		protected:
 			void showUsage();
 			void showLicense();
+
 		public:
 			static char *msgBoxTitle;
 
-			inline Application() {};
+			inline Application(){};
 
 			int main(int cmdN, char *cmdS[]);
 	};
@@ -41,10 +41,9 @@ namespace Main {
 		sprintf(buffer, "version %s build %s [%s]\n", WebDevMini::Version::version(), WebDevMini::Version::build(), WebDevMini::Version::datetime());
 		message << buffer;
 		message << WebDevMini::Copyright::fullCopyright() << "\n\n";
-		message <<
-			"options:\n"
-			"    --license           show license\n"
-			"    --usage             show usage\n";
+		message << "options:\n"
+		           "    --license           show license\n"
+		           "    --usage             show usage\n";
 		message << "\n";
 		MessageBox(nullptr, message, msgBoxTitle, MB_OK | MB_ICONINFORMATION);
 	};
@@ -77,56 +76,56 @@ namespace Main {
 			};
 		};
 
-		String exeFile=::XYO::Shell::getExecutable();
-		String exePath=::XYO::Shell::getExecutablePath();
-		String exeName=::XYO::Shell::getFileBasename(::XYO::Shell::getFileName(exeFile));
+		String exeFile = ::XYO::Shell::getExecutable();
+		String exePath = ::XYO::Shell::getExecutablePath();
+		String exeName = ::XYO::Shell::getFileBasename(::XYO::Shell::getFileName(exeFile));
 		String linkFile = exePath +
-				::XYO::Shell::pathSeparator +
-				"repository"+
-				::XYO::Shell::pathSeparator +
-				"Web Dev Mini.lnk";
+		                  ::XYO::Shell::pathSeparator +
+		                  "repository" +
+		                  ::XYO::Shell::pathSeparator +
+		                  "Web Dev Mini.lnk";
 
-		if(!::XYO::Win::Ole::isValid()){
+		if (!::XYO::Win::Ole::isValid()) {
 			MessageBox(nullptr, "#1 - Unable to initialize OLE", msgBoxTitle, MB_OK | MB_ICONERROR);
 			return 1;
 		};
 
-		if(!::XYO::Shell::mkdirRecursivelyIfNotExists("log")){
+		if (!::XYO::Shell::mkdirRecursivelyIfNotExists("log")) {
 			MessageBox(nullptr, "#2 - Unable to create log directory", msgBoxTitle, MB_OK | MB_ICONERROR);
-			return 1;			
+			return 1;
 		};
 
-		if(!::XYO::Shell::mkdirRecursivelyIfNotExists("tmp")){
+		if (!::XYO::Shell::mkdirRecursivelyIfNotExists("tmp")) {
 			MessageBox(nullptr, "#3 - Unable to create tmp directory", msgBoxTitle, MB_OK | MB_ICONERROR);
-			return 1;			
+			return 1;
 		};
 
-		if(!::XYO::Shell::mkdirRecursivelyIfNotExists("repository")){
+		if (!::XYO::Shell::mkdirRecursivelyIfNotExists("repository")) {
 			MessageBox(nullptr, "#4 - Unable to create repository directory", msgBoxTitle, MB_OK | MB_ICONERROR);
-			return 1;			
+			return 1;
 		};
-		     
-		if(!::XYO::Win::Shell::createLink(
-				linkFile,
-				exePath,
-				exePath +
-				::XYO::Shell::pathSeparator +
-				"library" +
-				::XYO::Shell::pathSeparator +
-				"electron" +
-				::XYO::Shell::pathSeparator +
-				"electron.exe",
-				String("library") +
-				::XYO::Shell::pathSeparator +
-				exeName +
-				::XYO::Shell::pathSeparator +
-				"application.js",
-				exeFile,0,false)){
+
+		if (!::XYO::Win::Shell::createLink(
+		        linkFile,
+		        exePath,
+		        exePath +
+		            ::XYO::Shell::pathSeparator +
+		            "library" +
+		            ::XYO::Shell::pathSeparator +
+		            "electron" +
+		            ::XYO::Shell::pathSeparator +
+		            "electron.exe",
+		        String("library") +
+		            ::XYO::Shell::pathSeparator +
+		            exeName +
+		            ::XYO::Shell::pathSeparator +
+		            "application.js",
+		        exeFile, 0, false)) {
 			MessageBox(nullptr, "#6 - Unable to create link", msgBoxTitle, MB_OK | MB_ICONERROR);
 			return 1;
 		};
-		
-		if(ShellExecute(NULL, "open", linkFile, NULL, NULL, SW_SHOWNORMAL)<(HINSTANCE)32){
+
+		if (ShellExecute(NULL, "open", linkFile, NULL, NULL, SW_SHOWNORMAL) < (HINSTANCE)32) {
 			MessageBox(nullptr, "#7 - Unable to execute link", msgBoxTitle, MB_OK | MB_ICONERROR);
 			return 1;
 		};
@@ -137,4 +136,3 @@ namespace Main {
 };
 
 XYO_APPLICATION_WINMAIN_STD(Main::Application);
-
