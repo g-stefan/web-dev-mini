@@ -1,0 +1,24 @@
+// Web Dev Mini
+// Copyright (c) 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
+// MIT License (MIT) <http://opensource.org/licenses/MIT>
+// SPDX-FileCopyrightText: 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-License-Identifier: MIT
+
+#ifndef WEBDEVMINI_VERSION_RH
+#define WEBDEVMINI_VERSION_RH
+
+#ifndef WEBDEVMINI_NO_VERSION
+#define WEBDEVMINI_VERSION_ABCD 2,0,0,13
+#define WEBDEVMINI_VERSION_STR "2.0.0"
+#define WEBDEVMINI_VERSION_STR_BUILD "13"
+#define WEBDEVMINI_VERSION_STR_DATETIME "2023-01-16 00:28:31"
+#define WEBDEVMINI_VERSION_STR_WITH_BUILD "2.0.0.13"
+#else
+#define WEBDEVMINI_VERSION_ABCD 0,0,0,0
+#define WEBDEVMINI_VERSION_STR "0.0.0"
+#define WEBDEVMINI_VERSION_STR_BUILD "0"
+#define WEBDEVMINI_VERSION_STR_DATETIME "0000-00-00"
+#define WEBDEVMINI_VERSION_STR_WITH_BUILD "0.0.0.0"
+#endif
+
+#endif

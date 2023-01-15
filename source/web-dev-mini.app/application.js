@@ -1,15 +1,13 @@
-//
-// Copyright (c) 2020-2022 Grigore Stefan <g_stefan@yahoo.com>
-// Created by Grigore Stefan <g_stefan@yahoo.com>
-//
+// Web Dev Mini
+// Copyright (c) 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
 // MIT License (MIT) <http://opensource.org/licenses/MIT>
-//
-
-require("./application-init.js");
+// SPDX-FileCopyrightText: 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-License-Identifier: MIT
 
 process.env["ELECTRON_DISABLE_SECURITY_WARNINGS"]=true;
 
-require("module").globalPaths.push(__dirname+"/../electron-modules");
+// --- set moule search paths
+require("module").globalPaths.push(__dirname + "\\..\\electron-modules");
 
 const globalPaths = require("module").globalPaths;
 const Module = require("module");
@@ -17,6 +15,11 @@ const nodeModulePaths = Module._nodeModulePaths;
 Module._nodeModulePaths = (from) => {
 	return nodeModulePaths(from).concat(globalPaths);
 };
+// ---
+
+require("./application-init.js");
+
+// ---
 
 var app=require("electron").app;
 var BrowserWindow=require("electron").BrowserWindow;

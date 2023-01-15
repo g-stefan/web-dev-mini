@@ -4,8 +4,7 @@ Portable Apache HTTP Server + PHP
 
 ## License
 
-Copyright (c) Grigore Stefan
-
+Copyright (c) 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
 Licensed under the [MIT](LICENSE) license.
 
 **This is a compilation of different works.**

@@ -4,7 +4,18 @@
 // SPDX-FileCopyrightText: 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
 // SPDX-License-Identifier: MIT
 
+#ifndef WEBDEVMINI_LICENSE_HPP
+#define WEBDEVMINI_LICENSE_HPP
 
-//
-// to be ovewrited, to extend or modify
-//
+#ifndef WEBDEVMINI_DEPENDENCY_HPP
+#	include "Dependency.hpp"
+#endif
+
+namespace WebDevMini::License {
+
+	const char *license();
+	const char *shortLicense();
+
+};
+
+#endif

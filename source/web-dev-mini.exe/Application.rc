@@ -4,7 +4,11 @@
 // SPDX-FileCopyrightText: 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
 // SPDX-License-Identifier: MIT
 
+#include "Application.rh"
+#include "Copyright.rh"
+#include "Version.rh"
 
-//
-// to be ovewrited, to extend or modify
-//
+1  ICON "Application.ico"
+
+XYO_APPLICATION_VERSION_INFO(WEBDEVMINI,"web-dev-mini.exe","Web Dev Mini")
+XYO_APPLICATION_MANIFEST("Application.manifest")
