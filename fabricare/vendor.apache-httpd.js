@@ -5,7 +5,7 @@
 
 messageAction("vendor [apache-httpd]");
 
-version = "2.4.56";
+version = "2.4.57";
 
 Shell.mkdirRecursivelyIfNotExists("vendor");
 
@@ -16,6 +16,8 @@ if (!Shell.fileExists("vendor/" + vendor)) {
 	Console.writeLn(cmd);
 	exitIf(Shell.system(cmd));
 };
+
+version = "2.4.56";
 
 var vendor = "httpd-" + version + "-win64-msvc-2022.7z";
 if (!Shell.fileExists("vendor/" + vendor)) {
