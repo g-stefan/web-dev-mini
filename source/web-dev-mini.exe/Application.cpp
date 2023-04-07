@@ -27,7 +27,7 @@ namespace WebDevMini {
 	};
 
 	void Application::showLicense() {
-		MessageBox(nullptr, WebDevMini::License::license(), msgBoxTitle, MB_OK | MB_ICONINFORMATION);
+		MessageBox(nullptr, WebDevMini::License::license().c_str(), msgBoxTitle, MB_OK | MB_ICONINFORMATION);
 	};
 
 	void Application::showVersion() {
