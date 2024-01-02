@@ -1,13 +1,13 @@
 // Web Dev Mini
-// Copyright (c) 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
+// Copyright (c) 2020-2024 Grigore Stefan <g_stefan@yahoo.com>
 // MIT License (MIT) <http://opensource.org/licenses/MIT>
-// SPDX-FileCopyrightText: 2020-2023 Grigore Stefan <g_stefan@yahoo.com>
+// SPDX-FileCopyrightText: 2020-2024 Grigore Stefan <g_stefan@yahoo.com>
 // SPDX-License-Identifier: MIT
 
 #ifndef WEBDEVMINI_COPYRIGHT_RH
 #define WEBDEVMINI_COPYRIGHT_RH
 
-#define WEBDEVMINI_COPYRIGHT "Copyright (c) 2020-2023 Grigore Stefan <g_stefan@yahoo.com>"
+#define WEBDEVMINI_COPYRIGHT "Copyright (c) 2020-2024 Grigore Stefan <g_stefan@yahoo.com>"
 #define WEBDEVMINI_PUBLISHER "Grigore Stefan"
 #define WEBDEVMINI_COMPANY WEBDEVMINI_PUBLISHER
 #define WEBDEVMINI_CONTACT "g_stefan@yahoo.com"
