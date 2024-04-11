@@ -11,10 +11,10 @@ namespace WebDevMini::License {
 
 	std::string license() {
 		std::string retV;
-		retV += ::XYO::ManagedMemory::License::licenseMITHeader();
+		retV += ::XYO::Platform::License::licenseMITHeader();
 		retV += Copyright::copyright();
 		retV += "\r\n";
-		retV += ::XYO::ManagedMemory::License::licenseMITContent();
+		retV += ::XYO::Platform::License::licenseMITContent();
 		return retV;
 	};
 
@@ -22,7 +22,7 @@ namespace WebDevMini::License {
 		std::string retV;
 		retV += Copyright::copyright();
 		retV += "\r\n";
-		retV += ::XYO::ManagedMemory::License::licenseMITShort();
+		retV += ::XYO::Platform::License::licenseMITShort();
 		return retV;
 	};
 
